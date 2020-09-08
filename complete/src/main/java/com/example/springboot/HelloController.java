@@ -3,6 +3,9 @@ package com.example.springboot;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import com.example.springboot.Contact;
 import org.springframework.ui.Model;
 
 @Controller
@@ -16,6 +19,13 @@ public class HelloController {
     
     @GetMapping("/contact")
     public String contact(Model model){
+        return "contact";
+    }
+
+    @PostMapping("/contact")
+    public String postContact(Model model, @RequestBody Contact contact){
+        //Contact create object
+        System.out.println(contact.getEmail());
         return "contact";
     }
 
