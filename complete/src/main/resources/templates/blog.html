@@ -32,6 +32,13 @@
         <h1 class="display-4">Blog Post</h1>
         <p class="lead">Fill out blog post</p>
         <hr class="my-4">
+         <form id="blog-form">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Message:</label>
+                <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </form>
         
     </div>
 
@@ -42,6 +49,23 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
+     <script>
+        //form handler
+        $("#blog-form").submit(function(event){
+            event.preventDefault();
+            var formData = {"message": exampleFormControlTextarea1.value};
+            $.ajax({
+                type: 'POST',
+                url: '/blog',
+                data: JSON.stringify(formData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function(data){
+                    console.log(data);
+                }
+            });
+        });
+    </script>
 
   </body>
 </html>

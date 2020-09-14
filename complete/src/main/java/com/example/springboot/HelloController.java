@@ -40,4 +40,10 @@ public class HelloController {
     //adding another GET and POST similar to contact, public postBlog(Blog)
     //new object blog needs a string
 
+    @PostMapping("/blog")
+    public String postBlog(Model model, @RequestBody Blog blog){
+        //Contact create object
+        System.out.println(blog.getMessage());
+        return "blog";
+    }
 }
