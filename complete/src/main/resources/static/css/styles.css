@@ -1,12 +1,12 @@
 #about-me{
     background-image: url(/img/profilepic.jpeg);
-    background-position: 50% 30%;
+    background-position: 50% 37%;
     font-size: 3em;
 }
 #about-me p{
     text-align: right;
 }
 .lead{
-    color: antiquewhite;
+    color: white;
     font-size: 1.5em;
 }

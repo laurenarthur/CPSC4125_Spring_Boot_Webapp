@@ -33,7 +33,10 @@ public class HelloController {
     public String about(Model model){
         return "about";
     }
-
+    @GetMapping("/blog")
+    public String blog(Model model){
+        return "blog";
+    }
     //adding another GET and POST similar to contact, public postBlog(Blog)
     //new object blog needs a string
 
