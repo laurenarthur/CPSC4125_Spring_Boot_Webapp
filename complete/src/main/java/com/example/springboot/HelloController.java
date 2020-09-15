@@ -24,10 +24,10 @@ public class HelloController {
     @PostMapping("/contact")
     public String postContact(Model model, @RequestBody Contact contact){
         //Contact create object
-        System.out.println(contact.getEmail());
-        System.out.println(contact.getMessage());
+        model.addAttribute("email", contact.getEmail());
+        model.addAttribute("message", contact.getMessage());
         //return fragment ContactResponse
-        return "contactResponse :: #contactSuccess";
+        return "fragment/contactResponse :: #contactSuccess";
     }
 
     @GetMapping("/about")
