@@ -27,7 +27,7 @@ public class HelloController {
         model.addAttribute("email", contact.getEmail());
         model.addAttribute("message", contact.getMessage());
         //return fragment ContactResponse
-        return "fragment/contactResponse :: #contactSuccess";
+        return "fragments/contactResponse :: #contactSuccess";
     }
 
     @GetMapping("/about")
