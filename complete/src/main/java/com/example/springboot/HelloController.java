@@ -45,6 +45,8 @@ public class HelloController {
     public String postBlog(Model model, @RequestBody Blog blog){
         //Contact create object
         model.addAttribute("message",blog.getMessage());
-        return "fragments/blogResponse :: #blogSucess";
+
+        System.out.println(blog.getMessage());
+        return "fragments/blogResponse :: #blogSuccess";
     }
 }
