@@ -38,6 +38,11 @@
 
     <div id="ajaxResonse">
     </div>
+
+    <div id="AddBlogPost">
+        <ul class="list-group" id ="BlogPostList">
+        </ul>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -56,13 +61,21 @@
                 data: JSON.stringify(formData),
                 contentType: "application/json; charset=utf-8",
                 success: function(data){
-                    $('ajaxREsponse').html(data)
+                    $('#AddBlogPost').html(data)
+                    addFunction();
+                    console.log("add function ran")
+                    return false;
                 },
                 error: function(e){
                     console.log(e);
                 }
             });
         });
+        function addFunction(){
+            var addBlogPost = $('#exampleFormControlTextarea1').val();
+            $('#BlogPostList').append('<li class ="list-group">${addBlogPost}</li>');
+            $('exampleFormControlTextera1').val("");
+        }
     </script>
 
   </body>
