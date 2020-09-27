@@ -19,8 +19,9 @@
         <p>You can enjoy the NASA picture of the day on this page!</p>
     </div>
     <!-- Added dice to load image of the day wit id -->
-    <div id="nasaAPOD">
-    </div>
+    <div id="nasaAPOD" >
+    </div>>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -39,6 +40,8 @@
                 dataType: 'json',
                 success: function(data){
                     console.log(data);
+                    //Tryied using this to remove the style attributes for the background position and background repeat
+                    //$('#nasaAPOD').attr('style', ''); 
                      $('#nasaAPOD').css('background',"url('" + data.url + "')");
                 },
                 error: function(e){
